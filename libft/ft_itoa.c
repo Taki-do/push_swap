@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:10:02 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/10/29 18:45:44 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/14 11:54:44 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,6 @@ static size_t	ft_nbsize(long nb)
 		size++;
 	}
 	return (size);
-}
-
-static char	*ft_strrev(char *str)
-{
-	size_t	i;
-	size_t	max;
-	size_t	len;
-	char	tmp;
-
-	i = 0;
-	len = ft_strlen(str);
-	max = len - 1;
-	while (i < len / 2)
-	{
-		tmp = str[i];
-		str[i] = str[max];
-		str[max] = tmp;
-		max--;
-		i++;
-	}
-	return (str);
 }
 
 static char	*ft_zero(void)

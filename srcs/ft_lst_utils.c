@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lst_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 18:50:01 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/14 11:50:37 by taomalbe         ###   ########.fr       */
+/*   Created: 2024/12/14 14:55:39 by taomalbe          #+#    #+#             */
+/*   Updated: 2024/12/14 15:14:48 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+t_stack	*ft_stacknew(int content)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	t_stack *new;
+	
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	new->before = NULL;	
+	return (new);
 }

@@ -3,31 +3,25 @@ PATH_SRC = srcs/
 PATH_INC = includes/
 PATH_LIBFT = libft/
 LIBFT_LIB = $(PATH_LIBFT)libft.a
-SRC = 
-SRC_BONUS = 
+SRC = $(PATH_SRC)main.c $(PATH_SRC)ft_input_ctrl.c $(PATH_SRC)ft_lst_utils.c
 OBJ = $(SRC:.c=.o)
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+INCLUDES = -I $(PATH_INC) -I $(PATH_LIBFT)
 
-all: $(NAME)
+all: $(LIBFT_LIB) $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) $(LIBFT_LIB) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT_LIB):
 	make -C $(PATH_LIBFT)
 
-bonus : $(LIBFT_LIB) $(OBJ) $(OBJ_BONUS)
-	cp $(LIBFT_LIB) $(NAME)
-	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
-
-$(NAME) : $(LIBFT_LIB) $(OBJ) 
-	cp $(LIBFT_LIB) $(NAME)
-	ar rcs $(NAME) $(OBJ)
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@ 
-
 clean:
-	/bin/rm -f $(OBJ) $(OBJ_BONUS)
+	/bin/rm -f $(OBJ)
 	make -C $(PATH_LIBFT) clean
 
 fclean: clean
@@ -36,4 +30,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

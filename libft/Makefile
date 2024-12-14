@@ -16,7 +16,7 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(NAME) bonus
 
 bonus : $(OBJ) $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
