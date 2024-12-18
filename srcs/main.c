@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:42:01 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/18 10:24:37 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:25:19 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(int ac, char *av[])
 		a->size = i - 1;
 		b->top = NULL;
 		b->size = 0;
-		ra(a);
+		simplesort(a, b);
 		ft_printf("stack a:\n");
 		while (a->top)
 		{
@@ -54,6 +54,12 @@ int main(int ac, char *av[])
 			ft_printf("%d\n", b->top->value);
 			b->top = b->top->next;
 		}
+		/*
+		if (ft_issort(a, b))
+			ft_printf("OK\n");
+		else
+			ft_printf("Not sorted");
+		*/
 	}
 	return (0);
 }

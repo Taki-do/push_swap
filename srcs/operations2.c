@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:40:55 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/18 11:45:13 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:43:58 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ra(t_stack *a)
 	t_node	*first;
 	t_node	*last;
 
+	ft_printf("ra\n");
 	if (a->size < 2)
 		return ;
 	first = a->top;
@@ -33,6 +34,7 @@ void	rb(t_stack *b)
 	t_node	*first;
 	t_node	*last;
 
+	ft_printf("rb\n");
 	if (b->size < 2)
 		return ;
 	first = b->top;
@@ -46,25 +48,45 @@ void	rb(t_stack *b)
 
 void	rr(t_stack *a, t_stack *b)
 {
-	return (ra(a), rb(b));
+	return (ft_printf("rr\n"), ra(a), rb(b));
 }
 
 void	rra(t_stack *a)
 {
-	t_node	*first;
 	t_node	*last;
+	t_node	*second_last;
 
-	
+	ft_printf("rra\n");
+	if (a->size < 2)
+		return ;
+	last = a->top;
+	second_last = NULL;
+	while (last->next)
+	{
+		second_last = last;
+		last = last->next;
+	}
+	last->next = a->top;
+	a->top = last;
+	second_last->next = NULL;
 }
-//Stocker le premier elem
-//
 
-2
-9
-5
-7 
+void	rrb(t_stack *b)
+{
+	t_node	*last;
+	t_node	*second_last;
 
-5
-7
-2
-9
+	ft_printf("rrb\n");
+	if (b->size < 2)
+		return ;
+	last = b->top;
+	second_last = NULL;
+	while (last->next)
+	{
+		second_last = last;
+		last = last->next;
+	}
+	last->next = b->top;
+	b->top = last;
+	second_last->next = NULL;
+}
