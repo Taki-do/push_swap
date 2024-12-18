@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:42:01 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/17 17:25:27 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 10:24:37 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,18 @@ int main(int ac, char *av[])
 		a->size = i - 1;
 		b->top = NULL;
 		b->size = 0;
-		pa(a, b);
+		ra(a);
+		ft_printf("stack a:\n");
 		while (a->top)
 		{
 			ft_printf("%d\n", a->top->value);
 			a->top = a->top->next;
+		}
+		ft_printf("stack b:\n");
+		while (b->top)
+		{
+			ft_printf("%d\n", b->top->value);
+			b->top = b->top->next;
 		}
 	}
 	return (0);

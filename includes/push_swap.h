@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:20:38 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/17 17:09:12 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:39:45 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 void	ft_addnode(t_node **lst_a, char *av);
 
 long	ft_atol(char *s);
