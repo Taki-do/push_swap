@@ -12,6 +12,19 @@
 
 #include "../includes/push_swap.h"
 
+void start_sort(t_stack *a, t_stack *b)
+{
+	if (ft_issort(a, b))
+		return ;
+    if (a->size == 2)
+        sa(a);
+    else if (a->size == 3)
+        sort_three(a);
+    else
+        chunksort(a, b);
+}
+
+
 int main(int ac, char *av[])
 {
 	int		i;
@@ -41,7 +54,9 @@ int main(int ac, char *av[])
 		a->size = i - 1;
 		b->top = NULL;
 		b->size = 0;
-		simplesort(a, b);
+		if (ft_double(a))
+			return (ft_putstr_fd("Error\n", 2), 0);
+		start_sort(a, b);
 		ft_printf("stack a:\n");
 		while (a->top)
 		{
@@ -54,12 +69,6 @@ int main(int ac, char *av[])
 			ft_printf("%d\n", b->top->value);
 			b->top = b->top->next;
 		}
-		/*
-		if (ft_issort(a, b))
-			ft_printf("OK\n");
-		else
-			ft_printf("Not sorted");
-		*/
 	}
 	return (0);
 }

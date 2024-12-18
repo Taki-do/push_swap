@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/14 15:27:28 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 18:57:45 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,28 @@ int	ft_tab_is_numeric(int ac, char *av[])
 		i++;
 	}
 	return (1);
+}
+
+int	ft_double(t_stack *a)
+{
+	t_node 	*i;
+	t_node	*j;
+
+	if (!a)
+		return (1);
+	i = a->top;
+	while (i->next)
+	{
+		j = i->next;
+		while (j->next)
+		{
+			if (i->value == j->value)
+				return (1);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (0);
 }
 
 int	ft_notflow(char *s)

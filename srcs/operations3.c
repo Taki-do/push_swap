@@ -16,3 +16,16 @@ void	rrr(t_stack *a, t_stack *b)
 {
 	return (ft_printf("rrr\n"), rra(a), rrb(b));
 }
+
+int	ft_sqrt(int nb)
+{
+	int	i;
+
+	i = 0;
+	while (i * i < nb)
+		i++;
+	if (i * i != nb)
+		i--;
+	ft_printf("racine de %d = %d\n", nb, i);
+	return (i);
+}

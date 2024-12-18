@@ -12,21 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-void	simplesort(t_stack *a, t_stack *b)
-{
-	(void)b;
-	if (ft_issort(a, b))
-		return ;
-	if ((a->top->value < a->top->next->value)
-		&& (a->top->next->value > a->top->next->next->value))
-		rra(a);
-	else if ((a->top->value > a->top->next->value)
-		&& (a->top->next->value > a->top->next->next->value))
-		return (ra(a), sa(a));
-	else
-		ra(a);
-}
-
 int	ft_issort(t_stack *a, t_stack *b)
 {
 	t_node *head;
@@ -43,4 +28,79 @@ int	ft_issort(t_stack *a, t_stack *b)
 		head = head->next;
 	}
 	return (1);
+}
+
+int has_elements_in_range(t_stack *a, int min, int max)
+{
+	t_node *node;
+
+	node = a->top;
+	while (node)
+	{
+		if (node->value >= min && node->value < max)
+			return 1;
+		node = node->next;
+	}
+	return 0;
+}
+
+void push_chunk_to_b(t_stack *a, t_stack *b, int min, int max)
+{
+    while (has_elements_in_range(a, min, max))
+    {
+        if (a->top->value >= min && a->top->value < max)
+        {
+            pb(a, b);
+            if (b->top->value < (min + max) / 2)
+                rb(b);
+        }
+        else
+            ra(a);
+    }
+}
+
+
+
+void push_highest_to_a(t_stack *a, t_stack *b)
+{
+	int highest;
+	int index;
+
+	highest = find_highest(b);
+	index = find_index(b, highest);
+	if (index <= b->size / 2)
+	{
+		while (b->top->value != highest)
+			rb(b);
+	}
+	else
+	{
+		while (b->top->value != highest)
+			rrb(b);
+	}
+	pa(a, b);
+}
+
+void	chunksort(t_stack *a, t_stack *b)
+{
+	int	i;
+	int	min;
+	int	max;
+	int	chunks;
+	int	chunks_size;
+
+	i = 0;
+	chunks = calculate_chunks(a->size);
+	chunks_size = calculate_chunk_size(a->size, chunks);
+	if (a->size % chunks != 0)
+		chunks_size++;
+	while (i < chunks)
+	{
+		min = i * chunks_size;
+		max = (i + 1) * chunks_size;
+		push_chunk_to_b(a, b, min, max);
+		i++;
+	}
+	while (b->size > 0)
+		push_highest_to_a(a, b);
 }

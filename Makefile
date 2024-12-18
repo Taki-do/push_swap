@@ -4,7 +4,7 @@ PATH_INC = includes/
 PATH_LIBFT = libft/
 LIBFT_LIB = $(PATH_LIBFT)libft.a
 SRC = $(PATH_SRC)main.c $(PATH_SRC)ft_input_ctrl.c $(PATH_SRC)ft_lst_utils.c $(PATH_SRC)operations.c \
-		$(PATH_SRC)operations2.c $(PATH_SRC)operations3.c $(PATH_SRC)sorting.c
+		$(PATH_SRC)operations2.c $(PATH_SRC)operations3.c $(PATH_SRC)sorting.c $(PATH_SRC)sorting2.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
