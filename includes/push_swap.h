@@ -59,6 +59,9 @@ int 	calculate_chunks(int stack_size);
 int 	calculate_chunk_size(int stack_size, int chunks);
 void 	sort_three(t_stack *a);
 
+void 	sort_five_or_less(t_stack *a, t_stack *b);
+void 	insertion_sort(t_stack *a, t_stack *b);
+
 long	ft_atol(char *s);
 
 t_node	*ft_newnode(int value);

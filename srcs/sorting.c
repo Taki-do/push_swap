@@ -60,47 +60,46 @@ void push_chunk_to_b(t_stack *a, t_stack *b, int min, int max)
 }
 
 
-
 void push_highest_to_a(t_stack *a, t_stack *b)
 {
-	int highest;
-	int index;
+    int highest;
+    int index;
 
-	highest = find_highest(b);
-	index = find_index(b, highest);
-	if (index <= b->size / 2)
-	{
-		while (b->top->value != highest)
-			rb(b);
-	}
-	else
-	{
-		while (b->top->value != highest)
-			rrb(b);
-	}
-	pa(a, b);
+    highest = find_highest(b);
+    index = find_index(b, highest);
+    if (index <= b->size / 2)
+    {
+        while (b->top->value != highest)
+            rb(b); 
+    }
+    else
+    {
+        while (b->top->value != highest)
+            rrb(b); 
+    }
+    pa(a, b);
 }
 
-void	chunksort(t_stack *a, t_stack *b)
+
+void chunksort(t_stack *a, t_stack *b)
 {
-	int	i;
-	int	min;
-	int	max;
-	int	chunks;
-	int	chunks_size;
+    int i;
+    int min;
+    int max;
+    int chunks;
+    int chunks_size;
 
-	i = 0;
-	chunks = calculate_chunks(a->size);
-	chunks_size = calculate_chunk_size(a->size, chunks);
-	if (a->size % chunks != 0)
-		chunks_size++;
-	while (i < chunks)
-	{
-		min = i * chunks_size;
-		max = (i + 1) * chunks_size;
-		push_chunk_to_b(a, b, min, max);
-		i++;
-	}
-	while (b->size > 0)
-		push_highest_to_a(a, b);
+    i = 0;
+    chunks = calculate_chunks(a->size);
+    chunks_size = calculate_chunk_size(a->size, chunks);
+    while (i < chunks)
+    {
+        min = i * chunks_size;
+        max = (i + 1) * chunks_size;
+        push_chunk_to_b(a, b, min, max);
+        i++;
+    }
+    while (b->size > 0)
+        push_highest_to_a(a, b);
 }
+

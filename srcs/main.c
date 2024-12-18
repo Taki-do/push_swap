@@ -16,10 +16,14 @@ void start_sort(t_stack *a, t_stack *b)
 {
 	if (ft_issort(a, b))
 		return ;
-    if (a->size == 2)
+    else if (a->size == 2)
         sa(a);
     else if (a->size == 3)
         sort_three(a);
+	else if (a->size <= 5)
+		sort_five_or_less(a, b);
+	else if (a->size <= 20)
+		insertion_sort(a, b);
     else
         chunksort(a, b);
 }
@@ -57,18 +61,6 @@ int main(int ac, char *av[])
 		if (ft_double(a))
 			return (ft_putstr_fd("Error\n", 2), 0);
 		start_sort(a, b);
-		ft_printf("stack a:\n");
-		while (a->top)
-		{
-			ft_printf("%d\n", a->top->value);
-			a->top = a->top->next;
-		}
-		ft_printf("stack b:\n");
-		while (b->top)
-		{
-			ft_printf("%d\n", b->top->value);
-			b->top = b->top->next;
-		}
 	}
 	return (0);
 }

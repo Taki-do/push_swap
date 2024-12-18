@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/18 18:57:45 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/12/18 21:29:52 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	ft_double(t_stack *a)
 	t_node 	*i;
 	t_node	*j;
 
-	if (!a)
-		return (1);
+	if (!a || a->size < 2)
+		return (0);
 	i = a->top;
-	while (i->next)
+	while (i)
 	{
 		j = i->next;
-		while (j->next)
+		while (j)
 		{
 			if (i->value == j->value)
 				return (1);
