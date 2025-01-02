@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_input_ctrl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/18 21:29:52 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:08:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_tab_is_numeric(int ac, char *av[])
+int	ft_tab_is_numeric(char *av[])
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (i < ac)
+	while (av[i])
 	{
 		j = 0;
 		while (av[i][j])

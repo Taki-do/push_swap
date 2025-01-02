@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:20:38 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/18 16:41:45 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/01/02 17:12:29 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ typedef struct s_stack
 	t_node *top;
 }	t_stack;
 
-int		ft_tab_is_numeric(int ac, char *av[]);
-int		ft_notflow(char *s);
-int		ft_issort(t_stack *a, t_stack *b);
 int		ft_sqrt(int nb);
+int		ft_notflow(char *s);
 int		ft_double(t_stack *a);
+int		countelem(char **split);
+int		ft_issort(t_stack *a, t_stack *b);
+int		ft_tab_is_numeric(char *av[]);
 
 void	sa(t_stack *a);
 void	sb(t_stack *b);
@@ -48,19 +49,21 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-void	ft_addnode(t_node **lst_a, char *av);
+void	ft_splitfree(char **split);
 void	simplesort(t_stack *a, t_stack *b);
+void	ft_freenode(t_stack *a, t_stack *b);
+void	ft_addnode(t_node **lst_a, char *av);
 
 //Algo Chunks
 int		find_highest(t_stack *s);
-int		find_index(t_stack *s, int value);
-void	chunksort(t_stack *a, t_stack *b);
 int 	calculate_chunks(int stack_size);
+int		find_index(t_stack *s, int value);
 int 	calculate_chunk_size(int stack_size, int chunks);
-void 	sort_three(t_stack *a);
 
-void 	sort_five_or_less(t_stack *a, t_stack *b);
+void 	sort_three(t_stack *a);
+void	chunksort(t_stack *a, t_stack *b);
 void 	insertion_sort(t_stack *a, t_stack *b);
+void 	sort_five_or_less(t_stack *a, t_stack *b);
 
 long	ft_atol(char *s);
 
