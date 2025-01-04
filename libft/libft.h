@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:58:15 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/12/03 14:38:43 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/01/04 11:44:53 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 // ft_printf
-
 
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
