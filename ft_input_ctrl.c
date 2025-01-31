@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_input_ctrl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/04 14:05:09 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:44:22 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_tab_is_numeric(char *av[])
 	int	i;
 	int	j;
 
+	if (!av)
+		return ;
 	i = 1;
 	while (av[i])
 	{

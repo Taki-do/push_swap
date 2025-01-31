@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:20:38 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/04 14:06:09 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:38:37 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_var
 
 int		ft_sqrt(int nb);
 int		ft_notflow(char *s);
+int		only_spaces(char *s);
 int		ft_double(t_stack *a);
 int		countelem(char **split);
 int		ft_issort(t_stack *a, t_stack *b);
