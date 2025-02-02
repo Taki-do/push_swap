@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorting2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 18:17:10 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/04 14:06:26 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:33:47 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	calculate_chunks(int stack_size)
 {

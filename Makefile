@@ -1,9 +1,9 @@
 NAME = push_swap
 PATH_LIBFT = libft/
 LIBFT_LIB = $(PATH_LIBFT)libft.a
-SRC = main.c ft_input_ctrl.c ft_lst_utils.c operations.c \
-		operations2.c operations3.c sorting.c sorting2.c \
-			split_input.c sorting3.c
+SRC = src/main.c src/ft_input_ctrl.c src/ft_lst_utils.c src/operations.c \
+		src/operations2.c src/operations3.c src/sorting.c src/sorting2.c \
+			src/split_input.c src/sorting3.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 FLAGS = -Wall -Wextra -Werror

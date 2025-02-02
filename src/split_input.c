@@ -6,11 +6,11 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 15:00:46 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/31 11:38:23 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:33:52 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_freenode(t_stack *a, t_stack *b)
 {

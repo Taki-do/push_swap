@@ -6,26 +6,24 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/31 11:44:22 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:33:09 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
-int	ft_tab_is_numeric(char *av[])
+int	ft_tab_is_numeric(char *av[], int i)
 {
-	int	i;
 	int	j;
 
-	if (!av)
-		return ;
-	i = 1;
 	while (av[i])
 	{
 		j = 0;
+		if (av[i][0] == '\0')
+			return (0);
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && av[i][j] != '-')
+			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-'))
 				return (0);
 			j++;
 		}
@@ -89,4 +87,18 @@ long	ft_atol(char *s)
 		i++;
 	}
 	return (res * sign);
+}
+
+int	is_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (-1);
+		i++;
+	}
+	return (1);
 }

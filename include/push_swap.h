@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 14:20:38 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/31 11:38:37 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:39:22 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_node
 {
@@ -43,26 +43,33 @@ typedef struct s_var
 int		ft_sqrt(int nb);
 int		ft_notflow(char *s);
 int		only_spaces(char *s);
+int		is_spaces(char *str);
 int		ft_double(t_stack *a);
 int		countelem(char **split);
 int		ft_issort(t_stack *a, t_stack *b);
-int		ft_tab_is_numeric(char *av[]);
+int		ft_tab_is_numeric(char *av[], int i);
+int		ft_fill2_lst(t_var *var, int tmp, int i);
 
 void	sa(t_stack *a);
 void	sb(t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	ft_splitfree(char **split);
 void	ss(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
 void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-void	ft_splitfree(char **split);
+void	exitfree(char **split, int mode);
 void	simplesort(t_stack *a, t_stack *b);
 void	ft_freenode(t_stack *a, t_stack *b);
 void	ft_addnode(t_node **lst_a, char *av);
+
+long	ft_atol(char *s);
+
+t_node	*ft_newnode(int value);
 
 //Algos
 
@@ -74,9 +81,5 @@ int		calculate_chunk_size(int stack_size, int chunks);
 void	sort_three(t_stack *a);
 void	chunksort(t_stack *a, t_stack *b);
 void	insertion_sort(t_stack *a, t_stack *b);
-
-long	ft_atol(char *s);
-
-t_node	*ft_newnode(int value);
 
 #endif

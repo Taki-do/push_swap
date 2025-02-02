@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:55:39 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/01/04 14:05:15 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/02 15:33:12 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_node	*ft_newnode(int value)
 {
@@ -39,4 +39,26 @@ void	ft_addnode(t_node **lst_a, char *av)
 			current = current->next;
 		current->next = new_node;
 	}
+}
+
+int	ft_fill2_lst(t_var *var, int tmp, int i)
+{
+	var->current = var->lst_a;
+	var->a->top = var->current;
+	if (var->ac == countelem(var->av) && tmp)
+		var->a->size = i - 1;
+	else
+	{
+		var->a->size = i;
+		ft_splitfree(var->tab);
+		var->tab = NULL;
+	}
+	var->b->top = NULL;
+	var->b->size = 0;
+	if (ft_double(var->a))
+	{
+		return (exitfree(var->tab, tmp),
+			ft_freenode(var->a, var->b), ft_putstr_fd("Error\n", 2), 1);
+	}
+	return (0);
 }
