@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:48:54 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/02/02 15:33:09 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:15:45 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ int	ft_tab_is_numeric(char *av[], int i)
 			return (0);
 		while (av[i][j])
 		{
-			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-'))
-				return (0);
+			if (!ft_isdigit(av[i][j]))
+			{
+				if ((j != 0 && av[i][j] == '-')
+					|| (av[i][j] == '-' && !ft_isdigit(av[i][j + 1])))
+					return (0);
+			}
 			j++;
 		}
 		i++;
