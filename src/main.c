@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 11:42:01 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/02/02 15:32:58 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:53:48 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	start_sort(t_stack *a, t_stack *b)
 {
+	int	i;
+
+	i = 0;
 	if (ft_issort(a, b))
 		return ;
 	else if (a->size == 2)
@@ -23,7 +26,7 @@ void	start_sort(t_stack *a, t_stack *b)
 	else if (a->size <= 20)
 		insertion_sort(a, b);
 	else
-		chunksort(a, b);
+		chunksort(a, b, i);
 }
 
 void	exitfree(char **split, int mode)

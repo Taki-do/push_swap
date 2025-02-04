@@ -79,44 +79,20 @@ void	push_highest_to_a(t_stack *a, t_stack *b)
 	pa(a, b);
 }
 
-int		ft_lowest(t_stack *a)
+void	chunksort(t_stack *a, t_stack *b, int i)
 {
-	int		lowest;
-	t_node	*lst;
-
-	lst = a->top;
-	lowest = lst->value;
-	while (lst->next)
-	{
-		lst = lst->next;
-		if (lst->value < lowest)
-			lowest = lst->value;
-	}
-	return (lowest);
-}
-
-int		get_absolute(int num)
-{
-	if (num < 0)
-		return (-num);
-	return (num);
-}
-
-void	chunksort(t_stack *a, t_stack *b)
-{
-	int	i;
 	int	min;
 	int	max;
 	int	chunks;
 	int	chunks_size;
 	int	mini;
 
-	i = 0;
 	mini = ft_lowest(a);
 	max = find_highest(a);
-
-	chunks_size = (get_absolute(mini) + get_absolute(max)) / calculate_chunks(a->size) + 1;
-	while (i < calculate_chunks(a->size))
+	chunks = calculate_chunks(a->size);
+	chunks_size = (get_absolute(mini) + get_absolute(max))
+		/ chunks + 1;
+	while (i < chunks)
 	{
 		min = mini + (i * chunks_size);
 		max = mini + ((i + 1) * chunks_size);

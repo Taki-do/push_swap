@@ -44,7 +44,9 @@ int		ft_sqrt(int nb);
 int		ft_notflow(char *s);
 int		only_spaces(char *s);
 int		is_spaces(char *str);
+int		ft_lowest(t_stack *a);
 int		ft_double(t_stack *a);
+int		get_absolute(int num);
 int		countelem(char **split);
 int		ft_issort(t_stack *a, t_stack *b);
 int		ft_tab_is_numeric(char *av[], int i);
@@ -79,7 +81,7 @@ int		find_index(t_stack *s, int value);
 int		calculate_chunk_size(int stack_size, int chunks);
 
 void	sort_three(t_stack *a);
-void	chunksort(t_stack *a, t_stack *b);
+void	chunksort(t_stack *a, t_stack *b, int i);
 void	insertion_sort(t_stack *a, t_stack *b);
 
 #endif

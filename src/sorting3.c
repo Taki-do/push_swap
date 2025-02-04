@@ -65,3 +65,26 @@ void	insertion_sort(t_stack *a, t_stack *b)
 	while (b->size > 0)
 		pa(a, b);
 }
+
+int	get_absolute(int num)
+{
+	if (num < 0)
+		return (-num);
+	return (num);
+}
+
+int	ft_lowest(t_stack *a)
+{
+	int		lowest;
+	t_node	*lst;
+
+	lst = a->top;
+	lowest = lst->value;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (lst->value < lowest)
+			lowest = lst->value;
+	}
+	return (lowest);
+}
