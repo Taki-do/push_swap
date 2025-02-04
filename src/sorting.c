@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:40:21 by taomalbe          #+#    #+#             */
-/*   Updated: 2025/02/02 15:33:45 by taomalbe         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:50:03 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,29 @@ void	push_highest_to_a(t_stack *a, t_stack *b)
 	pa(a, b);
 }
 
+int		ft_lowest(t_stack *a)
+{
+	int		lowest;
+	t_node	*lst;
+
+	lst = a->top;
+	lowest = lst->value;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (lst->value < lowest)
+			lowest = lst->value;
+	}
+	return (lowest);
+}
+
+int		get_absolute(int num)
+{
+	if (num < 0)
+		return (-num);
+	return (num);
+}
+
 void	chunksort(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -86,14 +109,17 @@ void	chunksort(t_stack *a, t_stack *b)
 	int	max;
 	int	chunks;
 	int	chunks_size;
+	int	mini;
 
 	i = 0;
-	chunks = calculate_chunks(a->size);
-	chunks_size = calculate_chunk_size(a->size, chunks);
-	while (i < chunks)
+	mini = ft_lowest(a);
+	max = find_highest(a);
+
+	chunks_size = (get_absolute(mini) + get_absolute(max)) / calculate_chunks(a->size) + 1;
+	while (i < calculate_chunks(a->size))
 	{
-		min = i * chunks_size;
-		max = (i + 1) * chunks_size;
+		min = mini + (i * chunks_size);
+		max = mini + ((i + 1) * chunks_size);
 		push_chunk_to_b(a, b, min, max);
 		i++;
 	}
