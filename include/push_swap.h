@@ -40,7 +40,6 @@ typedef struct s_var
 	t_node	*current;
 }	t_var;
 
-int		ft_sqrt(int nb);
 int		ft_notflow(char *s);
 int		only_spaces(char *s);
 int		is_spaces(char *str);
